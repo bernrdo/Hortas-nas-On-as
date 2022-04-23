@@ -24,3 +24,5 @@ Eles apresentam certas complicações com o seu plantio, primariamente na gestã
 - Marcos França
 - Roberto Lucas
 - Vitor Flores
+
+![prototipo](https://github.com/bernrdo/Hortas-nas-On-as/blob/9c62ae6c30dcbf72f1e3e0b52d782318fdc9344f/Prototipo%20app.png)
