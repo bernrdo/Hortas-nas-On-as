@@ -1,2 +1,15 @@
 # Hortas nas Onças
 Projeto Integrado 2022 - "Amazon Hacking"
+
+## O objetivo do projeto
+Pretendemos entregar um facilitador para o plantio, fazendo com que a pessoa que plantou consiga ter maior controle sobre a colheita, incluindo: gestão, tanto das hortaliças em si, como dos insumos que podem vir a ser usados; organização, para o cuidado com a limpeza, manuseio e preparação da terra para o plantio.
+
+## Contexto do problema
+O projeto Horta na Maré, realizado na Ilha das Onças, propõe uma alternativa para a inviabilização da plantação tradicional - a qual é impossibilitada pela força da água da maré -, fazê-la de maneira suspensa. Este projeto permite que a população local tenha acesso a uma nova fonte de alimentação.
+
+Eles apresentam certas complicações com o seu plantio, primariamente na gestão, organização, como também nos cuidados com as hortaliças (limpeza, manuseio, preparação, etc.). Os problemas que derivam tanto de pragas, quanto da falta de adubo para o plantio são notórios. Em menor escala, podemos também falar da cadeia produtiva.
+
+## Funcionalidades do produto
+
+
+## Integrantes do projeto
