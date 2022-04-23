@@ -1,5 +1,6 @@
 # Hortas nas Onças
-Projeto Integrado 2022 - "Amazon Hacking"
+Projeto Integrado 2022  
+> "Amazon Hacking"
 
 ## O objetivo do projeto
 Pretendemos entregar um facilitador para o plantio, fazendo com que a pessoa que plantou consiga ter maior controle sobre a colheita, incluindo: gestão, tanto das hortaliças em si, como dos insumos que podem vir a ser usados; organização, para o cuidado com a limpeza, manuseio e preparação da terra para o plantio.
