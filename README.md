@@ -21,7 +21,7 @@ Eles apresentam certas complicações com o seu plantio, primariamente na gestã
 ## Integrantes do projeto
 - Bernardo Brandão
 - Herminio Calvinho Bisneto
-- Marcos França
+- Marcos França - https://github.com/Marcosfranca20
 - Roberto Lucas
 - Vitor Flores
 
