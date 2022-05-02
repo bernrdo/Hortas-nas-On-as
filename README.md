@@ -19,11 +19,11 @@ Eles apresentam certas complicações com o seu plantio, primariamente na gestã
 7. Tela de informações sobre plantas
 
 ## Integrantes do projeto
-- Bernardo Brandão
+- Bernardo Brandão - mailto:bernardogbrandao@gmail.com
 - Herminio Calvinho Bisneto
-- Marcos França - https://github.com/Marcosfranca20
-- Roberto Lucas
-- Vitor Flores
+- Marcos França - mailto:Marcosfranca1233@gmail.com
+- Roberto Lucas - mailto:robertolucasmsouza@gmail.com
+- Vitor Flores - mailto:Vitordf25@gmail.com
 
 ## Protótipo de alta fidelidade
 ![prototipo](https://github.com/bernrdo/Hortas-nas-On-as/blob/9c62ae6c30dcbf72f1e3e0b52d782318fdc9344f/Prototipo%20app.png)
