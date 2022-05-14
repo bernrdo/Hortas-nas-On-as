@@ -13,10 +13,8 @@ Eles apresentam certas complicações com o seu plantio, primariamente na gestã
 1. Diário de plantio
 2. Calendário 
 3. Alerta de colheita
-4. Organização de plantio
-5. Tabela de modos de plantio
-6. Utilização de água
-7. Tela de informações sobre plantas
+4. Utilização de água
+5. Tela de informações sobre plantas
 
 ## Integrantes do projeto
 - Bernardo Brandão - bernardogbrandao@gmail.com
