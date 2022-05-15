@@ -2,33 +2,32 @@ package com.example.myapplication;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.DayViewDecorator;
+import com.prolificinteractive.materialcalendarview.DayViewFacade;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.spans.DotSpan;
+
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 public class Adapter extends ArrayAdapter<Hortas> {
@@ -36,13 +35,15 @@ public class Adapter extends ArrayAdapter<Hortas> {
     int layoutRes;
     List<Hortas> ListaHortas;
 
+
     public Adapter(Context mCtx, int layoutRes, List<Hortas> ListaHortas) {
         super(mCtx, layoutRes, ListaHortas);
-
         this.mcTx = mCtx;
         this.layoutRes = layoutRes;
         this.ListaHortas = ListaHortas;
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @NonNull
@@ -52,11 +53,14 @@ public class Adapter extends ArrayAdapter<Hortas> {
         View view = inflater.inflate(layoutRes, null);
         TextView textViewNome = view.findViewById(R.id.textViewName);
         TextView textViewMudas = view.findViewById(R.id.textViewMudas);
+        MaterialCalendarView materialCalendarView = (MaterialCalendarView) view.findViewById(R.id.calendarView);
+        Collection datas = new ArrayList();
+
 
         final Hortas horta = ListaHortas.get(position);
         textViewNome.setText(horta.getNomeHorta());
         textViewMudas.setText("Data Da Colheita : "+horta.getDataColheita());
-
+        datas.add(horta.getDataColheita());
 
 
         view.findViewById(R.id.buttonDetalhes).setOnClickListener(new View.OnClickListener() {
@@ -107,4 +111,30 @@ public class Adapter extends ArrayAdapter<Hortas> {
         textViewQuantAgua.setText("Quantidade de Água necessária: " + horta.getQuantAgua() + " Litros");
         textViewQuantMudas.setText("Quantidade de Mudas: " + horta.getQuantMudas());
     }
-}
+    public static class EventDecorator implements DayViewDecorator {
+
+        private final int color;
+        private final HashSet<CalendarDay> dates;
+
+        public EventDecorator(int color, Collection<CalendarDay> dates) {
+            this.color = color;
+            this.dates = new HashSet<>(dates);
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return dates.contains(day);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new DotSpan(5, color));
+        }
+    }
+
+        }
+
+
+
+
+

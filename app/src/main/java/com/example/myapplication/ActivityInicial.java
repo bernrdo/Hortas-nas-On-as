@@ -47,6 +47,12 @@ public class ActivityInicial extends AppCompatActivity {
                 startActivity(new Intent(ActivityInicial.this, ActivityProxColheita.class));
             }
         });
+        ButtonCalendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActivityInicial.this, MainActivity6.class));
+            }
+        });
 
     }
 }

@@ -15,7 +15,6 @@ public class ActivityListaHorta extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     List<Hortas> ListaHortas;
     ListView listView;
-    Button detalhes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
