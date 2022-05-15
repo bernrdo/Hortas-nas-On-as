@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
@@ -20,6 +21,7 @@ import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.spans.DotSpan;
 
 import java.text.DateFormat;
+import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -50,7 +52,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(mcTx);
-        View view = inflater.inflate(layoutRes, null);
+        @SuppressLint("ViewHolder") View view = inflater.inflate(layoutRes, null);
         TextView textViewNome = view.findViewById(R.id.textViewName);
         TextView textViewMudas = view.findViewById(R.id.textViewMudas);
         MaterialCalendarView materialCalendarView = view.findViewById(R.id.calendarView);
@@ -59,7 +61,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
 
         final Hortas horta = ListaHortas.get(position);
         textViewNome.setText(horta.getNomeHorta());
-        textViewMudas.setText("Data Da Colheita : "+horta.getDataColheita());
+        textViewMudas.setText(MessageFormat.format("Data Da Colheita : {0}", horta.getDataColheita()));
         datas.add(horta.getDataColheita());
 
 
@@ -92,7 +94,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
 
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+        @SuppressLint("SimpleDateFormat") DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         LocalDate Data1 = LocalDate.parse(horta.getDataColheita(),dtf);
         LocalDate Data2 = LocalDate.parse(LocalDate.now().format(dtf),dtf);
@@ -100,11 +102,11 @@ public class Adapter extends ArrayAdapter<Hortas> {
 
 
         textViewNomeDetalhes.setText(horta.getNomeHorta());
-        textViewDiasColheitas.setText("Faltam " + dias + " Dias Para a Colheita");
-        textViewDiaDoPlantio.setText("Dia do Plantio: " + horta.getDataPlantio());
-        textViewDiaDaColheita.setText("Dia da Colheita: " + horta.getDataColheita());
-        textViewQuantAgua.setText("Quantidade de Água necessária: " + horta.getQuantAgua() + " Litros");
-        textViewQuantMudas.setText("Quantidade de Mudas: " + horta.getQuantMudas());
+        textViewDiasColheitas.setText(MessageFormat.format("Faltam {0} Dias Para a Colheita", dias));
+        textViewDiaDoPlantio.setText(MessageFormat.format("Dia do Plantio: {0}", horta.getDataPlantio()));
+        textViewDiaDaColheita.setText(MessageFormat.format("Dia da Colheita: {0}", horta.getDataColheita()));
+        textViewQuantAgua.setText(MessageFormat.format("Quantidade de Água necessária: {0} Litros", horta.getQuantAgua()));
+        textViewQuantMudas.setText(MessageFormat.format("Quantidade de Mudas: {0}", horta.getQuantMudas()));
     }
     public static class EventDecorator implements DayViewDecorator {
 

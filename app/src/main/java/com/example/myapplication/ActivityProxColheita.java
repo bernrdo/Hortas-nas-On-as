@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class ActivityProxColheita extends AppCompatActivity {
     SQLiteDatabase mDatabase;
@@ -54,11 +56,12 @@ public class ActivityProxColheita extends AppCompatActivity {
             }while (cursor.moveToNext());
 
             Collections.sort(ListaHortas, new Comparator<Hortas>() {
-                DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+                @SuppressLint("SimpleDateFormat")
+                final DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
                 @Override
                 public int compare(Hortas o1, Hortas o2) {
                     try {
-                        return f.parse(o1.getDataColheita()).compareTo(f.parse(o2.getDataColheita()));
+                        return Objects.requireNonNull(f.parse(o1.getDataColheita())).compareTo(f.parse(o2.getDataColheita()));
                     } catch (ParseException e) {
                         throw new IllegalArgumentException(e);
                     }
