@@ -25,7 +25,7 @@ public class EventDecorator extends AppCompatActivity implements DayViewDecorato
 
     @Override
     public boolean shouldDecorate(CalendarDay day) {
-        return dates=contains.da;
+        return dates.contains(day);
     }
 
     @Override
