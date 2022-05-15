@@ -24,7 +24,5 @@ public class ActivityLayoutLista extends AppCompatActivity {
                 startActivity(new Intent(ActivityLayoutLista.this, Detalhes.class));
             }
         });
-
-
     }
 }

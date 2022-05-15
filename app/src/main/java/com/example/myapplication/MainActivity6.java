@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import com.EventDecorator;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
@@ -18,9 +20,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-public class MainActivity6 extends AppCompatActivity {
+public class MainActivity6 extends AppCompatActivity  {
     SQLiteDatabase mDatabase;
-    List<Hortas> ListaHortas;
 
 
     @Override
@@ -28,9 +29,6 @@ public class MainActivity6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
         mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
-
-
-
         MaterialCalendarView materialCalendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
 
 
