@@ -24,15 +24,15 @@ public class ActivityAdicionar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar);
 
-        ButtonSalvar = (Button) findViewById(R.id.button_salvarHorta);
+        ButtonSalvar = findViewById(R.id.button_salvarHorta);
         ButtonSalvar.setOnClickListener(v -> addHorta());
 
 
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
         createTable();
 
-        input_nome = (EditText) findViewById(R.id.input_nome);
-        input_mudas = (EditText) findViewById(R.id.input_mudas);
+        input_nome = findViewById(R.id.input_nome);
+        input_mudas = findViewById(R.id.input_mudas);
 
     }
 
