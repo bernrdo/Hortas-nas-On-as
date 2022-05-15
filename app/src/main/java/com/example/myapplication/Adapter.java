@@ -53,7 +53,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
         View view = inflater.inflate(layoutRes, null);
         TextView textViewNome = view.findViewById(R.id.textViewName);
         TextView textViewMudas = view.findViewById(R.id.textViewMudas);
-        MaterialCalendarView materialCalendarView = (MaterialCalendarView) view.findViewById(R.id.calendarView);
+        MaterialCalendarView materialCalendarView = view.findViewById(R.id.calendarView);
         Collection datas = new ArrayList();
 
 
@@ -63,13 +63,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
         datas.add(horta.getDataColheita());
 
 
-
-        view.findViewById(R.id.buttonDetalhes).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verDetalhes(horta);
-            }
-        });
+        view.findViewById(R.id.buttonDetalhes).setOnClickListener(v -> verDetalhes(horta));
 
         return view;
     }
@@ -101,7 +95,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
         DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         LocalDate Data1 = LocalDate.parse(horta.getDataColheita(),dtf);
-        LocalDate Data2 = LocalDate.parse(LocalDate.now().format(dtf).toString(),dtf);
+        LocalDate Data2 = LocalDate.parse(LocalDate.now().format(dtf),dtf);
         long dias = Duration.between(Data2.atStartOfDay(),Data1.atStartOfDay()).toDays();
 
 
@@ -111,8 +105,29 @@ public class Adapter extends ArrayAdapter<Hortas> {
         textViewDiaDaColheita.setText("Dia da Colheita: " + horta.getDataColheita());
         textViewQuantAgua.setText("Quantidade de Água necessária: " + horta.getQuantAgua() + " Litros");
         textViewQuantMudas.setText("Quantidade de Mudas: " + horta.getQuantMudas());
-    }}
+    }
+    public static class EventDecorator implements DayViewDecorator {
 
+        private final int color;
+        private final HashSet<CalendarDay> dates;
+
+        public EventDecorator(int color, Collection<CalendarDay> dates) {
+            this.color = color;
+            this.dates = new HashSet<>(dates);
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return dates.contains(day);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new DotSpan(5, color));
+        }
+    }
+
+        }
 
 
 
