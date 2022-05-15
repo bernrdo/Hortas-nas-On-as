@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class ActivityListaHorta extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
         ListaHortas = new ArrayList<>();
-        listView = (ListView) findViewById(R.id.listViewHortas);
+        listView = findViewById(R.id.listViewHortas);
 
 
         loadHortas();

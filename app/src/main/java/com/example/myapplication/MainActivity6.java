@@ -31,7 +31,7 @@ public class MainActivity6 extends AppCompatActivity {
 
 
 
-        MaterialCalendarView materialCalendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
+        MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);
 
 
     }}
