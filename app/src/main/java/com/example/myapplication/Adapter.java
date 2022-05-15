@@ -53,7 +53,7 @@ public class Adapter extends ArrayAdapter<Hortas> {
         View view = inflater.inflate(layoutRes, null);
         TextView textViewNome = view.findViewById(R.id.textViewName);
         TextView textViewMudas = view.findViewById(R.id.textViewMudas);
-        MaterialCalendarView materialCalendarView = view.findViewById(R.id.calendarView);
+        MaterialCalendarView materialCalendarView = (MaterialCalendarView) view.findViewById(R.id.calendarView);
         Collection datas = new ArrayList();
 
 
@@ -63,7 +63,12 @@ public class Adapter extends ArrayAdapter<Hortas> {
         datas.add(horta.getDataColheita());
 
 
-        view.findViewById(R.id.buttonDetalhes).setOnClickListener(v -> verDetalhes(horta));
+        view.findViewById(R.id.buttonDetalhes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                verDetalhes(horta);
+            }
+        });
 
         return view;
     }
@@ -92,10 +97,10 @@ public class Adapter extends ArrayAdapter<Hortas> {
 
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        DateFormat f = DateFormat.getDateTimeInstance();
+        DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         LocalDate Data1 = LocalDate.parse(horta.getDataColheita(),dtf);
-        LocalDate Data2 = LocalDate.parse(LocalDate.now().format(dtf),dtf);
+        LocalDate Data2 = LocalDate.parse(LocalDate.now().format(dtf).toString(),dtf);
         long dias = Duration.between(Data2.atStartOfDay(),Data1.atStartOfDay()).toDays();
 
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class ActivityLayoutLista extends AppCompatActivity {
@@ -15,9 +16,14 @@ public class ActivityLayoutLista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout_lista);
 
-        detalhes = findViewById(R.id.buttonDetalhes);
+        detalhes = (Button) findViewById(R.id.buttonDetalhes);
 
-        detalhes.setOnClickListener(v -> startActivity(new Intent(ActivityLayoutLista.this, Detalhes.class)));
+        detalhes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActivityLayoutLista.this, Detalhes.class));
+            }
+        });
 
 
     }

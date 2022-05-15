@@ -22,7 +22,7 @@ public class ActivityListaHorta extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
         ListaHortas = new ArrayList<>();
-        listView = findViewById(R.id.listViewHortas);
+        listView = (ListView) findViewById(R.id.listViewHortas);
 
 
         loadHortas();
