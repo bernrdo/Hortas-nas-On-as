@@ -48,6 +48,6 @@ public class ActivityListaHorta extends AppCompatActivity {
             listView.setAdapter(adapter);
         }
 
-
+        cursor.close();
     }
 }

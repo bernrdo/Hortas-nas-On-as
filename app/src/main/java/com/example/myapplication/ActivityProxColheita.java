@@ -68,4 +68,5 @@ public class ActivityProxColheita extends AppCompatActivity {
             Adapter adapter = new Adapter(this,R.layout.activity_layout_lista,ListaHortas);
             listView.setAdapter(adapter);
         }
+        cursor.close();
 }}
