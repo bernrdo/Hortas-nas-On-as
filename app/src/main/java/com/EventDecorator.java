@@ -1,26 +1,31 @@
 package com;
 
+import android.graphics.Color;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.spans.DotSpan;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Collection;
-import java.util.HashSet;
 
-public class EventDecorator implements DayViewDecorator {
+public class EventDecorator extends AppCompatActivity implements DayViewDecorator {
 
-    private final int color;
-    private final HashSet<CalendarDay> dates;
+    private final int color = Color.parseColor("#FF0000");
+    private final Collection<LocalDate> dates;
 
-    public EventDecorator(int color, Collection<CalendarDay> dates) {
-        this.color = color;
-        this.dates = new HashSet<>(dates);
+    public EventDecorator(Collection<LocalDate> dates) {
+
+        this.dates = dates;
     }
 
     @Override
     public boolean shouldDecorate(CalendarDay day) {
-        return dates.contains(day);
+        return dates=contains.da;
     }
 
     @Override

@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.EventDecorator;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +32,7 @@ public class ActivityListaHorta extends AppCompatActivity {
 
     }
 
-    private void loadHortas() {
+    public void loadHortas() {
         String sql = "SELECT * FROM ListaHortas";
 
         Cursor cursor = mDatabase.rawQuery(sql, null);
@@ -46,6 +50,16 @@ public class ActivityListaHorta extends AppCompatActivity {
 
             Adapter adapter = new Adapter(this, R.layout.activity_layout_lista, ListaHortas);
             listView.setAdapter(adapter);
+            MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);
+            materialCalendarView.addDecorator(new EventDecorator(Adapter.data));
+            EventDecorator  eventDecorator= new EventDecorator(date);
+            widget.addDecorator(eventDecorator);
+            widget.invalidateDecorators();
+
+
+
+
+
         }
 
 

@@ -20,6 +20,7 @@ import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.spans.DotSpan;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -27,14 +28,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
 public class Adapter extends ArrayAdapter<Hortas> {
+    public static Collection<CalendarDay> data;
     Context mcTx;
     int layoutRes;
     List<Hortas> ListaHortas;
-
 
     public Adapter(Context mCtx, int layoutRes, List<Hortas> ListaHortas) {
         super(mCtx, layoutRes, ListaHortas);
@@ -54,13 +56,23 @@ public class Adapter extends ArrayAdapter<Hortas> {
         TextView textViewNome = view.findViewById(R.id.textViewName);
         TextView textViewMudas = view.findViewById(R.id.textViewMudas);
         MaterialCalendarView materialCalendarView = view.findViewById(R.id.calendarView);
-        Collection datas = new ArrayList();
 
 
         final Hortas horta = ListaHortas.get(position);
         textViewNome.setText(horta.getNomeHorta());
         textViewMudas.setText("Data Da Colheita : "+horta.getDataColheita());
-        datas.add(horta.getDataColheita());
+        Calendar cal = Calendar.getInstance();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+
+        data.add(CalendarDay.today());
+
+
+
+
+
+
 
 
         view.findViewById(R.id.buttonDetalhes).setOnClickListener(v -> verDetalhes(horta));
