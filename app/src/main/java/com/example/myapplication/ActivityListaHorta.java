@@ -2,18 +2,16 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity4 extends AppCompatActivity {
+public class ActivityListaHorta extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     List<Hortas> ListaHortas;
     ListView listView;
@@ -22,8 +20,8 @@ public class MainActivity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
-        mDatabase = openOrCreateDatabase(MainActivity3.DATABASE_NAME, MODE_PRIVATE, null);
+        setContentView(R.layout.activity_lista);
+        mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
         ListaHortas = new ArrayList<>();
         listView = (ListView) findViewById(R.id.listViewHortas);
 
@@ -48,7 +46,7 @@ public class MainActivity4 extends AppCompatActivity {
                         cursor.getString(5)));
             } while (cursor.moveToNext());
 
-            Adapter adapter = new Adapter(this, R.layout.activity_main2, ListaHortas);
+            Adapter adapter = new Adapter(this, R.layout.activity_layout_lista, ListaHortas);
             listView.setAdapter(adapter);
         }
 

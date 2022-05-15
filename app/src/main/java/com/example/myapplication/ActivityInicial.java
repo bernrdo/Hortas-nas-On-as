@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityInicial extends AppCompatActivity {
     Button ButtonInfo, ButtonLista, ButtonCalendario,ButtonProx,ButtonAdd;
 
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_inicial);
         ButtonInfo = (Button) findViewById(R.id.buttonInfo);
         ButtonLista = (Button) findViewById(R.id.buttonLista);
         ButtonCalendario = (Button) findViewById(R.id.buttonCalendario);
@@ -26,25 +26,25 @@ public class MainActivity extends AppCompatActivity {
         ButtonLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainActivity4.class));
+                startActivity(new Intent(ActivityInicial.this, ActivityListaHorta.class));
             }
         });
         ButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainActivity3.class));
+                startActivity(new Intent(ActivityInicial.this, ActivityAdicionar.class));
             }
         });
         ButtonProx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainActivity5.class));
+                startActivity(new Intent(ActivityInicial.this, ActivityProxColheita.class));
             }
         });
         ButtonProx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainActivity5.class));
+                startActivity(new Intent(ActivityInicial.this, ActivityProxColheita.class));
             }
         });
 

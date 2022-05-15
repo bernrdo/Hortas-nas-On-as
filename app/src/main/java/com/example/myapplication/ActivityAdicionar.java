@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class MainActivity3 extends AppCompatActivity {
+public class ActivityAdicionar extends AppCompatActivity {
     public static final String DATABASE_NAME = "MinhaDB";
     Button ButtonSalvar;
 
@@ -23,7 +22,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_adicionar);
 
         ButtonSalvar = (Button) findViewById(R.id.button_salvarHorta);
         ButtonSalvar.setOnClickListener(v -> addHorta());

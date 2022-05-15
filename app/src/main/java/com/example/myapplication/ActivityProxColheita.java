@@ -7,23 +7,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MainActivity5 extends AppCompatActivity {
+public class ActivityProxColheita extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     List<Hortas> ListaHortas ;
     ListView listView;
@@ -34,8 +28,8 @@ public class MainActivity5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
-        mDatabase = openOrCreateDatabase(MainActivity3.DATABASE_NAME, MODE_PRIVATE, null);
+        setContentView(R.layout.activity_listaprox);
+        mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
         ListaHortas = new ArrayList<>();
         listView = (ListView)  findViewById(R.id.listViewHortas2);
 
@@ -71,7 +65,7 @@ public class MainActivity5 extends AppCompatActivity {
                 }
             });
 
-            Adapter adapter = new Adapter(this,R.layout.activity_main2,ListaHortas);
+            Adapter adapter = new Adapter(this,R.layout.activity_layout_lista,ListaHortas);
             listView.setAdapter(adapter);
         }
 }}

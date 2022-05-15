@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
+    tools:context=".ActivityAdicionar">
+
 
     <EditText
         android:id="@+id/input_nome"
@@ -18,36 +19,34 @@
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="221dp"
-        android:layout_height="33dp"
-        android:text="Qual o nome da horta"
+        android:layout_width="260dp"
+        android:layout_height="39dp"
+        android:text="Qual o nome da horta?"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.291"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="278dp"
+        android:layout_height="43dp"
         android:contentDescription="textview"
-        android:layout_width="237dp"
-        android:layout_height="38dp"
-        android:text="Quantas mudas foram plantadas"
+        android:text="Quantas mudas foram plantadas?"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.213" />
-
-
 
     <EditText
         android:id="@+id/input_mudas"

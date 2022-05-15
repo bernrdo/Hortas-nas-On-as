@@ -17,24 +17,24 @@
             android:name=".MainActivity6"
             android:exported="false" />
         <activity
-            android:name=".MainActivity5"
+            android:name=".ActivityProxColheita"
             android:exported="false" />
         <activity
             android:name=".Detalhes"
             android:exported="false" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".ActivityListaHorta"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".ActivityAdicionar"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ActivityInicial" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".ActivityLayoutLista"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ActivityInicial" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityInicial"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
