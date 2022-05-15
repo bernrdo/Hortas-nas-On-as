@@ -62,6 +62,6 @@ public class ActivityListaHorta extends AppCompatActivity {
 
         }
 
-
+        cursor.close();
     }
 }

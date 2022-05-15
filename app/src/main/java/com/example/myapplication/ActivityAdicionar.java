@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -53,7 +54,7 @@ public class ActivityAdicionar extends AppCompatActivity {
         String nomeHorta = input_nome.getText().toString().trim();
         String quantMudas = input_mudas.getText().toString().trim();
         Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String dataPlantio = sdf.format(cal.getTime());
         cal = Calendar.getInstance();
         cal.add((Calendar.DATE), 35);

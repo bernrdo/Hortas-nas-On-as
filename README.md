@@ -18,7 +18,7 @@ Eles apresentam certas complicações com o seu plantio, primariamente na gestã
 
 ## Integrantes do projeto
 - Bernardo Brandão - bernardogbrandao@gmail.com
-- Herminio Calvinho Bisneto
+- Herminio Calvinho Bisneto - herminiobisneto@gmail.com
 - Marcos França - Marcosfranca1233@gmail.com
 - Roberto Lucas - robertolucasmsouza@gmail.com
 - Vitor Flores - Vitordf25@gmail.com
