@@ -24,6 +24,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,7 +34,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Adapter extends ArrayAdapter<Hortas> {
-    public static Collection<CalendarDay> data;
+    public static HashSet<LocalDate> data;
     Context mcTx;
     int layoutRes;
     List<Hortas> ListaHortas;
@@ -64,13 +65,6 @@ public class Adapter extends ArrayAdapter<Hortas> {
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
-
-        data.add(CalendarDay.today());
-
-
-
-
 
 
 
