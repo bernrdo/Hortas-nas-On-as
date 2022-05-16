@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import com.EventDecorator;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
@@ -29,5 +28,17 @@ public class MainActivity6 extends AppCompatActivity {
         setContentView(R.layout.activity_main6);
         mDatabase = openOrCreateDatabase(ActivityAdicionar.DATABASE_NAME, MODE_PRIVATE, null);
 
+        MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);
 
+        materialCalendarView.addDecorators(new DayViewDecorator() {
+            @Override
+            public boolean shouldDecorate(CalendarDay day) {
+                return true;
+            }
+
+            @Override
+            public void decorate(DayViewFacade view) {
+
+            }
+        });
     }}

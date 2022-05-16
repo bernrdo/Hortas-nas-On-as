@@ -7,20 +7,6 @@
     tools:context=".ActivityInicial">
 
     <Button
-        android:id="@+id/buttonInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#5F8C40"
-        android:text="Informaçoes"
-        app:iconTint="#713737"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363" />
-
-    <Button
         android:id="@+id/buttonLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

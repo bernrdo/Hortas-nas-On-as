@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.EventDecorator;
+
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
@@ -50,14 +50,6 @@ public class ActivityListaHorta extends AppCompatActivity {
 
             Adapter adapter = new Adapter(this, R.layout.activity_layout_lista, ListaHortas);
             listView.setAdapter(adapter);
-            MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);
-            materialCalendarView.addDecorator(new EventDecorator(Adapter.data));
-            EventDecorator  eventDecorator= new EventDecorator(date);
-            widget.addDecorator(eventDecorator);
-            widget.invalidateDecorators();
-
-
-
 
 
         }

@@ -16,7 +16,6 @@ public class ActivityInicial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
-        ButtonInfo = findViewById(R.id.buttonInfo);
         ButtonLista = findViewById(R.id.buttonLista);
         ButtonCalendario = findViewById(R.id.buttonCalendario);
         ButtonProx = findViewById(R.id.buttonProx);
